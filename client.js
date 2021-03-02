@@ -41,3 +41,26 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+function employeeBonuses(Employee){
+  let position = employeePosition(Employee);
+  let employeeOutput = {
+    name: employees[position].name,
+    bonusPercentage: '',
+    totalCompensation: '',
+    totalBonus: ''
+  }
+}
+
+function employeePosition(Employee){
+  for (let i = 0; i < employees.length; i++) {
+    if (Employee === employees[i].name){
+      return i
+    }//end if
+  }//end for
+}
+
+console.log(employeeBonuses('Jem'));
+
+//employeeBonuses(Mayella)
+
