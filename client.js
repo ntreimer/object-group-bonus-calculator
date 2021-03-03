@@ -32,6 +32,7 @@ const employees = [
     reviewRating: 1
   }
 ];
+let newEmployee ={};
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
@@ -52,7 +53,10 @@ function readyNow(){
 function printInfo(){
   let outputlEl = $('#empList');
   outputlEl.empty();
-  outputlEl.append('Employee:' + employeeBonuses($('#empID').val()));
+  outputlEl.append(`<u>Employee:</u> ` + newEmployee.name + ` ` 
+  + `<u>Bonus Percentage:</u> ` + newEmployee.bonusPercentage + ' ' 
+  + `<u>Bonus Total:</u> ` + newEmployee.totalBonus + ' ' 
+  + `<u>Total Compensation:</u> ` + newEmployee.totalCompensation)
 }
 
 function grabEmployee(){
@@ -76,7 +80,6 @@ function employeePosition(Employee){
 }
 
 function employeeBonus(employee){
-  let newEmployee ={};
   if(employees[employee].reviewRating < 2){
     newEmployee.name = employees[employee].name;
     newEmployee.bonusPercentage= 0;
