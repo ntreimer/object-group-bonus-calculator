@@ -56,65 +56,62 @@ function employeePosition(Employee){
   }//end for
 }
 
-function percentCalculator(input){
-  
-}
-
-console.log(employeeBonuses('Jem'));
-
 function employeeBonus(employee){
   let newEmployee ={};
   if(employees[employee].reviewRating < 2){
     newEmployee.name = employees[employee].name;
     newEmployee.bonusPercentage= 0;
     newEmployee.totalBonus = 0;
-    newEmployee.totalCompensation = Number(employee.annualSalary) + Number(newEmployee.totalBonus);
+    newEmployee.totalCompensation = Number(employees[employee].annualSalary) + Number(newEmployee.totalBonus);
     }
   
     else if(employees[employee].reviewRating === 3){
-    newEmployee.name = employees.name;
+    newEmployee.name = employees[employee].name;
     newEmployee.bonusPercentage = 4;
-    newEmployee.totalBonus= Math.round(employee.annualSalary * .04);
-    newEmployee.totalCompensation= Number(employee.annualSalary) + Number(newEmployee.totalBonus);
+    newEmployee.totalBonus= Math.round(employees[employee].annualSalary * .04);
+    newEmployee.totalCompensation= Number(employees[employee].annualSalary) + Number(newEmployee.totalBonus);
     }
     
     else if(employees[employee].reviewRating ===4) {
-    newEmployee.name = employee.name;
+    newEmployee.name = employees[employee].name;
     newEmployee.bonusPercentage= 6;
-    newEmployee.totalBonus = Math.round(employee.annualSalary * .06);
-    newEmployee.totalCompensation = Number(employee.annualSalary) + Number(newEmployee.totalBonus);
+    newEmployee.totalBonus = Math.round(employees[employee].annualSalary * .06);
+    newEmployee.totalCompensation = Number(employees[employee].annualSalary) + Number(newEmployee.totalBonus);
     }
     
-    else if (employee.reviewRating === 5){
-    newEmployee.name= employee.name;
+    else if (employees[employee].reviewRating === 5){
+    newEmployee.name= employees[employee].name;
     newEmployee.bonusPercentage= 10;
-    newEmployee.totalBonus= Math.round(employee.annualSalary * .1);
-    newEmployee.totalCompensation = Number(employee.annualSalary) + Number(newEmployee.totalBonus);
+    newEmployee.totalBonus= Math.round(employees[employee].annualSalary * .1);
+    newEmployee.totalCompensation = Number(employees[employee].annualSalary) + Number(newEmployee.totalBonus);
   }
-  if(employee.employeeNumber.length === 4){
+  if(employees[employee].employeeNumber.length === 4){
     newEmployee.name = employee.name;
     newEmployee.bonusPercentage = Number(newEmployee.bonusPercentage) + 5;
-    newEmployee.totalBonus = Math.round(Number(employee.annualSalary) * (Number(newEmployee.bonusPercentage)/100));
-    newEmployee.totalCompensation = Number(employee.annualSalary) + Number(newEmployee.totalBonus);
+    newEmployee.totalBonus = Math.round(Number(employees[employee].annualSalary) * (Number(newEmployee.bonusPercentage)/100));
+    newEmployee.totalCompensation = Number(employees[employee].annualSalary) + Number(newEmployee.totalBonus);
   }
-  if(employee.annualSalary > 65000){
-    newEmployee.name= employee.name;
+  if(employees[employee].annualSalary > 65000){
+    newEmployee.name= employees[employee].name;
     newEmployee.bonusPercentage= Number(newEmployee.bonusPercentage) - 1;
-    newEmployee.totalBonus= Math.round(Number(employee.annualSalary) * (Number(newEmployee.bonusPercentage)/ 100));
-    newEmployee.totalCompensation= Number(newEmployee.totalBonus) + Number(employee.annualSalary);
+    newEmployee.totalBonus= Math.round(Number(employees[employee].annualSalary) * (Number(newEmployee.bonusPercentage)/ 100));
+    newEmployee.totalCompensation= Number(newEmployee.totalBonus) + Number(employees[employee].annualSalary);
   }
   if(newEmployee.bonusPercentage > 13){
-    newEmployee.name = employee.name;
+    newEmployee.name = employees[employee].name;
     newEmployee.bonusPercentage= 13;
-    newEmployee.totalBonus= Math.round(Number(employee.annualSalary) * (Number(newEmployee.bonusPercentage/ 100))),
-    newEmployee.totalCompensation= Number(newEmployee.totalBonus) + Number(employee.annualSalary);
+    newEmployee.totalBonus= Math.round(Number(employees[employee].annualSalary) * (Number(newEmployee.bonusPercentage/ 100))),
+    newEmployee.totalCompensation= Number(newEmployee.totalBonus) + Number(employees[employee].annualSalary);
   }
   if(newEmployee.bonusPercentage < 0){
-    newEmployee.name= employee.name;
+    newEmployee.name= employees[employee].name;
     newEmployee.bonusPercentage= 0,
-    newEmployee.totalBonus= Math.round(Number(employee.annualSalary) * (Number(newEmployee.bonusPercentage/ 100)));
-    newEmployee.totalCompensation = Number(newEmployee.totalBonus) + Number(employee.annualSalary);
+    newEmployee.totalBonus= Math.round(Number(employees[employee].annualSalary) * (Number(newEmployee.bonusPercentage/ 100)));
+    newEmployee.totalCompensation = Number(newEmployee.totalBonus) + Number(employees[employee].annualSalary);
   }
     return newEmployee;
       }
   
+console.log(employeeBonuses('Jem'));
+
+console.log(employeeBonuses('Scout'));
