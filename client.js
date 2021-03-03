@@ -61,6 +61,7 @@ function printInfo(){
 
 function grabEmployee(){
   let output = employeeBonuses( $('#empID').val() );
+  $('#empID').val('');
   console.log(output);
   return output;
 }
