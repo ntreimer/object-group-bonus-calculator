@@ -1,3 +1,5 @@
+$(document).ready(readyNow);
+
 const employees = [
   {
     name: 'Atticus',
@@ -41,6 +43,16 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+function readyNow(){
+  $('#startProgram').on('click', grabEmployee);
+}
+
+function grabEmployee (){
+  let output = employeeBonuses( $('#empID').val() );
+  console.log(output);
+  return output;
+}
 
 function employeeBonuses(Employee){
   let position = employeePosition(Employee);
