@@ -46,9 +46,16 @@ console.log( employees );
 
 function readyNow(){
   $('#startProgram').on('click', grabEmployee);
+  $('#startProgram').on('click', printInfo);
 }
 
-function grabEmployee (){
+function printInfo(){
+  let outputlEl = $('#empList');
+  outputlEl.empty();
+  outputlEl.append('Employee:' + employeeBonuses($('#empID').val()));
+}
+
+function grabEmployee(){
   let output = employeeBonuses( $('#empID').val() );
   console.log(output);
   return output;
@@ -98,7 +105,7 @@ function employeeBonus(employee){
     newEmployee.totalCompensation = Number(employees[employee].annualSalary) + Number(newEmployee.totalBonus);
   }
   if(employees[employee].employeeNumber.length === 4){
-    newEmployee.name = employee.name;
+    newEmployee.name = employees[employee].name;
     newEmployee.bonusPercentage = Number(newEmployee.bonusPercentage) + 5;
     newEmployee.totalBonus = Math.round(Number(employees[employee].annualSalary) * (Number(newEmployee.bonusPercentage)/100));
     newEmployee.totalCompensation = Number(employees[employee].annualSalary) + Number(newEmployee.totalBonus);
