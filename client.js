@@ -44,12 +44,15 @@ console.log( employees );
 
 function employeeBonuses(Employee){
   let position = employeePosition(Employee);
+  let bonusPercentage = percentCalculator(position);
+  
   let employeeOutput = {
     name: employees[position].name,
-    bonusPercentage: '',
+    bonusPercentage: bonusPercentage,
     totalCompensation: '',
     totalBonus: ''
   }
+  return employeeOutput
 }
 
 function employeePosition(Employee){
@@ -60,7 +63,34 @@ function employeePosition(Employee){
   }//end for
 }
 
+function percentCalculator(input){
+  
+}
+
 console.log(employeeBonuses('Jem'));
 
 //employeeBonuses(Mayella)
 
+/*
+
+if(Employee.ratingreview < 2){
+  
+}//end if rating lower than 2
+
+if(Employee.ratingreview === 3){
+
+}//end if rating equal 3
+
+if(Employee.ratingreview === 4){
+
+}//end if rating equal 4
+
+if(Employee.ratingreview === 5){
+
+}//end if rating equal 5
+
+if(employeeNumber.length < 5){
+
+}//end if employeeId is 4 digits they have been there 15 years or longer
+
+if()
