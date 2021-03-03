@@ -1,3 +1,12 @@
+h1 {
+    text-align: center;
+}
 body {
     background-color: aqua;
+}
+
+ul {
+    background-color: white;
+    font-size: larger;
+    border: 2px solid black;
 }

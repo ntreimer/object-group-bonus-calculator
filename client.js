@@ -52,11 +52,10 @@ function readyNow(){
 
 function printInfo(){
   let outputlEl = $('#empList');
-  outputlEl.empty();
-  outputlEl.append(`<u>Employee:</u> ` + newEmployee.name + ` ` 
-  + `<u>Bonus Percentage:</u> ` + newEmployee.bonusPercentage + ' ' 
-  + `<u>Bonus Total:</u> ` + newEmployee.totalBonus + ' ' 
-  + `<u>Total Compensation:</u> ` + newEmployee.totalCompensation)
+  outputlEl.append(`<li>` + `<u>Employee:</u> ` + newEmployee.name + ` ` 
+  + `<u>Bonus Percentage:</u> ` + newEmployee.bonusPercentage + '% ' 
+  + `<u>Bonus Total:</u> ` + `$` + newEmployee.totalBonus.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' ' 
+  + `<u>Total Compensation:</u> ` + `$` + newEmployee.totalCompensation.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")) + `</li>`
 }
 
 function grabEmployee(){
